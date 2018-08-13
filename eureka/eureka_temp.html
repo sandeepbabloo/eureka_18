@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="author" content="Sandeep Kosuri">
+	<meta name="Description" content="Eureka is Asia's Largest B-Model Competition">
+
+	<title>Eureka! 2018</title>
+	<style>
+		/*h1{
+			width: 100%;
+			top: 0px;
+			padding: 0;
+			margin: 0;
+			position : fixed;
+		}*/
+
+		/*h2{
+			width: 100%;
+			top: 0px;
+			padding: 0;
+			margin: 0;
+		}*/
+		
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fadei {
+  -webkit-animation-name: fadei;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fadei;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadei {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fadei {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+		li{
+			float:right;
+			padding:16px;
+			/*padding-bottom: 0px;*/
+			color:#d1d3ce;
+			/*background-color:#222e3c;*/
+			font-size: 18px;
+			cursor:pointer;
+			/*font-weight:500;*/
+		}
+		li a{
+			color:#d1d3ce;
+		}
+		li a:hover{
+			color:#d07f40;
+		}
+		.non{
+			margin-top:7.5px;
+			margin-left:7.5px;
+			margin-right:7.5px;
+			padding:5px;
+			border-radius:5px;
+			border:2px solid #d1d3ce;
+		}
+		li:hover{
+			color:#d07f40;
+			/*padding-bottom:0px;*/
+		}
+		.dot{
+			display:none;
+			margin:0px;
+			font-size:20px;
+			padding:0px;
+		}
+		.head{
+			border-bottom-color:linear-gradient(#020202,#181818);
+			border-bottom:5px solid;
+			width:100%;
+			position:fixed;
+			margin:0px;
+			/*height:100vh;*/
+			z-index:100;
+		}
+		.heading{
+			/*background-color:#222e3c;*/
+			/*width:100%;*/
+			color:#d1d3ce;
+			box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+			padding-top:3px;
+			padding-bottom:0px;
+		}
+		.heading_inside{
+			margin-left:100px;
+			font-size:35px;
+			float:left;
+			padding-right:20px;
+		}
+		.tablist{
+			border: 2px solid #d1d3ce;
+			text-align:center;
+			font-size:16px;
+			color:#d1d3ce;
+		}
+		.tabs{
+			padding:4px;
+			border: 2px solid #222e3c;
+		}
+		th{
+			padding:8px;
+			border-bottom: 2px solid #d1d3ce;
+			cursor:pointer;
+			position:relative;
+		}
+		th:hover{
+			background-color: #d07f40;
+		}
+		.parts{
+			border: 2px solid #d1d3ce;
+		}
+		.options{
+			display:none;
+			background-color:#e7a54f;
+		}
+		.matter{
+			border: 2px solid #d1d3ce;
+			height:500px;
+		}
+		.tabs{
+			z-index:1;
+			padding-bottom:20px;
+		}
+		.stats{
+			background-color:#e7a54f;
+		}
+		.stats_style{
+			background-color:#d1d3ce;
+		}
+		.stats_parts{
+			padding-top:15px;
+			padding-bottom:15px;
+			font-size:80px;
+			color:#d1d3ce;
+			text-shadow:40px 40px #d07f40;
+		}
+		.stats_names{
+			/*padding-top:15px;
+			padding-bottom:15px;*/
+			font-size:20px;
+			color:black;
+			/*text-shadow:40px 40px #d07f40;*/
+			text-align:center;
+		}
+		.incent_part{
+			width:90%;
+			box-shadow: 5px 5px #151c24;
+			cursor:pointer;
+		}
+		.incent_part:hover{
+			box-shadow: 10px 10px #151c24;
+			transition-duration:0.5s;
+		}
+		.about_names{
+			color:#d1d3ce;
+			font-size:60px;
+			text-align:center;
+		}
+		.about_des{
+			color:black;
+			font-size:14px;
+			padding:5px;
+			/*text-align:center;*/
+		}
+		.personal_details{
+			color:#d1d3ce;
+			text-align:center;
+		}
+		.input{
+			border-radius:3px;
+			background-color:#222e3c;
+			border: 1px solid #d1d3ce;
+			margin-bottom:15px;
+		}
+		.main{
+			background-image:url('eureka_cover.jpg');
+			background-size:cover;
+			z-index:200;
+			width:100%;
+			height:110vh;
+			border:0px solid black;
+		}
+		.about{
+			box-shadow:	5px 5px #151c24;
+			cursor:pointer;
+		}
+		.about:hover{
+			box-shadow:	10px 10px #151c24;
+		}
+		.manager_pic{
+			box-shadow:	5px 5px #151c24;
+			margin-bottom:5px;
+			cursor:pointer;
+		}
+		.manager_pic:hover{
+			box-shadow:	8px 8px #151c24;
+		}
+		.but2,.but1{
+			background-color:#222e3c;
+			border-radius:5px;
+			border:2px solid #d1d3ce; 
+			margin-top:384px;
+			color:#d1d3ce;
+			font-size:18px;
+		}
+		.but1{
+			padding-left: 45px;
+    		padding-right: 45.5px;
+    		margin-left: 152.1px;
+    		padding-top: 5px;
+    		padding-bottom: 6px;
+		}
+		.but2{
+			margin-left: 30px;
+    		padding-left: 40px;
+    		padding-right: 40px;
+    		padding-top: 5px;
+    		padding-bottom: 5px;
+		}
+		.menu{
+			padding-bottom:5px;
+			padding-top:5px;
+		}
+		* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+@keyframes rotate{
+  from{ transform:rotate(0deg); }
+  10%{transform:rotate(10deg);}
+  20%{transform:rotate(20deg);}
+  30%{transform:rotate(30deg);}
+  40%{transform:rotate(40deg);}
+  50%{transform:rotate(50deg);}
+  60%{transform:rotate(40deg);}
+  70%{transform:rotate(30deg);}
+  80%{transform:rotate(20deg);}
+  90%{transform:rotate(10deg);}
+  100%{transform:rotate(0deg);} 
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  margin-right:-10%;
+}
+.prev{
+  margin-left:-20%;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade1 {
+  -webkit-animation-name: fade1;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade1;
+  animation-duration: 1.5s;
+}
+.rotate{
+    -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+  animation-name: rotate;
+  animation-duration: 1.5s;
+}
+.right{
+    -webkit-animation-name:right;
+  -webkit-animation-duration: 1.5s;
+  animation-name: right;
+  animation-duration: 1.5s;
+}
+@keyframes right{
+   from{transform: translateX(0px);}
+   to{transform:translateX(40px);}
+}
+@keyframes left{
+   from{transform: translateX(40px);}
+   to{transform:translateX(0px);}
+}
+.left{
+    -webkit-animation-name:left;
+  -webkit-animation-duration: 1.5s;
+  animation-name:left;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade1 {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+@keyframes fade1 {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.line2{
+  height:0px;
+  width:1px;
+  border-right:1px solid black;
+  
+  -webkit-animation: increased 3s;
+  -moz-animation:    increased 3s; 
+  -o-animation:      increased 3s; 
+  animation:         increased 3s; 
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+.line1{
+  height:1px;
+  width:0px;
+  border-top:1px solid black;
+  
+  -webkit-animation: increases 3s;
+  -moz-animation:    increases 3s; 
+  -o-animation:      increases 3s; 
+  animation:         increases 3s; 
+  animation-direction:reverse;
+}
+
+@keyframes increased {
+    100% {
+        height:100px;
+    }
+}
+@keyframes increases {
+	from{
+		width:0px;
+	}
+    to{
+        width:100px;
+    }
+}
+
+#halfclip {
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left center;
+}
+
+/*#container:hover #halfclip {
+    animation: cliprotate 6s 1;
+    transform: rotate(180deg);
+} */
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(0deg);}
+  50.01% {transform: rotate(180deg);}
+  100% {transform: rotate(180deg);}
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 25px transparent;
+   border-top-color: blue;
+   border-left-color: blue;
+   border-radius: 50%;
+}
+
+#clipped {
+    width: 200%;
+    transform: rotate(-45deg);
+}
+/*#container:hover #clipped {
+    transform: rotate(135deg);
+    animation: rotate 3s linear 2;
+}*/
+
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+    opacity: 0;
+}
+
+/*#container:hover #fixed {
+    opacity: 1;
+    animation: showfixed 6s 1;
+}*/
+
+
+
+@keyframes showfixed {
+  0% {opacity: 0;}
+  49.99% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}#container {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+   /*border: solid red 1px;*/
+   margin-left:0%;
+   animation: colors 1s ;
+}
+
+#halfclip {
+  width: 50%;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+   overflow: hidden;
+   transform-origin: left center;
+   animation: cliprotate 4s steps(2) 2;
+   -webkit-animation: cliprotate 4s steps(2) 2;
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 5px transparent;
+   border-top-color: blue;
+   border-left-color: blue;
+   border-radius: 50%;
+}
+#clipped {
+  width: 200%;
+   animation: rotate 2s linear 2;
+   -webkit-animation: rotate 2s linear 2;
+}
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+   animation: showfixed 4s steps(2) 1;
+   -webkit-animation: showfixed 4s linear 1;
+}
+
+@-webkit-keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@-webkit-keyframes showfixed {
+  0% {opacity: 0;}
+  49.9% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}
+strong{
+	color:#d07f40;
+}
+</style>
+
+</head>
+<body style="background-color:#222e3c;">
+
+	<header>
+			<div class="head row" style="background-color:#222e3c;margin-right:0px">
+				<ul type="none" class="menu">
+					<li>Contact Us</li>
+					<li class="part">About Us</li>
+					<li>Sponsors</li>
+					<li class="non"><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
+					<li class="non"><a href="https://ecell.in/illuminate" target="_blank">Illuminate</a></li>
+					<li>Incentives</li>
+					<li>Competition</li>
+					<li>Home</li>
+				</ul>
+		    </div>
+		    <!-- <img src="boost1.jpg" style="width:100%"> -->
+	</header>
+
+	<div class="main" >
+			<button class="but1">Login</button>
+			<button class="but2">Register</button>
+	</div>
+	
+	<div class="slideshow-container" style="margin-top:-15%;margin-left:0px;margin-right:0px">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides col-xs-12">
+    <div class="numbertext"></div>
+    <div class="col-xs-3">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <img src="sumitra.jpg" style="width:100%;float:left;z-index:0">
+      <img src="shruti_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+    </div>
+    <div class="col-xs-8" style="background-color:#d1d3ce ">
+      <div class="col-xs-2">
+         <h3 style="font-size:20px" class="left">KIBO</h3>
+      </div>
+      <div class="col-xs-4" style="margin-left:30% !important">
+        <div id="container" style="background-image:url('jordy.jpg')">
+            <div id="halfclip">
+            <div class="halfcircle" id="clipped">
+            </div>
+            </div>
+                <div class="halfcircle" id="fixed">
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-2" style="font-size:20px">
+          <h3 class="right">2015</h3>
+      </div>
+          <div >
+                <p style="background-color:#d1d3ce;font-size:20px"><br><br>kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+          </div>
+          <div class="text">Caption Text</div>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+<div class="mySlides">
+  
+  <div class="col-xs-3">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
+    <img src="parag_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+  </div>
+  <div class="col-xs-8" style="background-color:#d1d3ce ">
+       <div class="col-xs-2">
+       <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
+      </div>
+      <div class="col-xs-4" style="margin-left:30% !important">
+        <div id="container" style="background-image:url('jordy.jpg')">
+            <div id="halfclip">
+            <div class="halfcircle" id="clipped">
+            </div>
+            </div>
+                <div class="halfcircle" id="fixed">
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-2" style="float:right;font-size:20px">
+          <h3 class="right">2015</h3>
+      </div>
+      <div>
+          <p style="background-color:#d1d3ce;font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+      </div>
+      <div class="text">Caption Two</div>
+      <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+</div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    
+      <div class="col-xs-3">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
+          <img src="prevee_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+      </div>
+      <div class="col-xs-8" style="background-color:#d1d3ce ">
+          <div class="col-xs-2">
+              <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
+          </div>
+          <div class="col-xs-4" style="margin-left:30% !important">
+          <div id="container" style="background-image:url('jordy.jpg')">
+              <div id="halfclip">
+                  <div class="halfcircle" id="clipped">
+                  </div>
+                  </div>
+                      <div class="halfcircle" id="fixed">
+                  </div>
+              </div>
+          </div>
+          <div class="col-xs-2" style="float:right;font-size:20px">
+              <h3 class="right">2015</h3>
+          </div>
+          <div class="fade1">
+              <p style="font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+          </div>
+          <div class="text">Caption Three</div>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+  </div>
+  <!-- Next and previous buttons -->
+</div>
+
+	<div class="heading" style="margin-top:20%">
+		<h2 class="heading_inside">Competition</h2>
+		<img src="small.jpg">
+	</div>
+
+	<div class="tabs">
+	<div class="col-md-12" style="margin-top:20px">
+		<div class="row">
+		<div class="content col-md-2 col-md-offset-1">
+			<div class="tabs">
+			<table class="tablist">
+					<tr class="structure"><th>Structure</th></tr>
+					<tr class="options"><th>Timeline</th></tr>
+					<tr class="options"><th>Tracks&Awards</th></tr>
+					<tr><th>Eligibility</th></tr>
+					<tr><th>Rules</th></tr>
+					<tr><th>FAQ's</th></tr>
+					<tr><th>Terms & Conditions</th></tr>
+					<tr><th>Past 18 years</th></tr>
+					<tr><th>Success Stories</th></tr>	
+			</table>	
+		</div>
+		</div>
+			<div class="matter col-md-8">
+				<h3 style="text-align:center;color:#d1d3ce"> Eureka Portal is going to be launched on <strong>25th August</strong></h3>
+			<div class="col-md-3">
+				<img src="part.jpg" height="100px" >
+				<p style="color:white;text-align:center">/</p>
+				<div class="line1" style="display:none;margin-left:5px"></div>
+				<div class="line2" style="display:none;margin-left:5px"></div>
+			</div>
+			<div class="col-md-3">
+				<img src="part.jpg" height="100px" >
+			</div>
+			<div class="col-md-3">
+				<img src="part.jpg" height="100px" >
+			</div>
+			<div class="col-md-3">
+				<img src="part.jpg" height="100px" >
+			</div>		
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="stats col-md-12" style="margin-top:25px">
+		<div class="col-md-offset-2 col-md-3 stats_parts">
+			<p><b>9100</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>150</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>15</b></p>
+		</div>
+		<div class="col-md-2 stats_parts">
+			<p><b>90</b></p>
+		</div>
+	</div>
+
+	<div class="stats_style col-md-12" style="margin-bottom:40px">
+		<div class="col-md-offset-2 col-md-3 stats_names">
+			<p><b>Entries(Last year)</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Mentors</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Lacs of Prize Money</b></p>
+		</div>
+		<div class="col-md-2 stats_names">
+			<p><b>Years</b></p>
+		</div>
+	</div>
+
+	<div class="heading">
+		<div class="row">
+			<h2 class="heading_inside">Incentives</h2>
+			<img src="small2.jpg">
+		</div>
+	</div>
+
+	<div class="container" style="margin-top:20px">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-3" style="margin-bottom:30px">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+			<div class="col-md-3">
+				<img src="incentive_image.jpg" class="incent_part">
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="heading">
+		<h2 class="heading_inside">About Us</h2>
+		<img src="small.jpg">
+	</div>
+
+	<div class="container" style="margin-top:20px">
+	<div class="col-md-12">
+
+	<div class="row about" style="margin-bottom:30px">
+		<div class="col-md-3" style="background-color:#e7a54f">
+			<h3 class="about_names" style="padding:9px;"><b>What is Eureka?</b></h3>
+		</div>
+		<div class="col-md-9" style="background-color:#d1d3ce">
+			<p class="about_des" >Instated to foster the spirit of entrepreneurship and business acumen among people all around the world , Eureka! fast-tracks the journey from an innovative idea to a commercial success. Eureka! is Asia's largest business model competition accredited independently by CNN and Thomson Reuters. Designed to emulate the process of growth of an idea towards a full-fledged startup. Eureka! prides itself on providing a 360 degree, holistic experience in the 5 month period that it spans. Right from acknowledging that your idea has a potential, to drafting a B-Model and pitching in front of an esteemed panel of investors, this platform has it all! Over the 17 years of its existence, Eureka! has grown from a competition in which 50 teams competed for INR 50,000 to a competition which sees over 8000 entries competing for prizes worth INR 5 Million at stake with excellent networking opportunities in India and the Silicon Valley !</p>
+		</div>
+	</div>
+
+	<div class="row about">
+		<div class="col-md-3" style="background-color:#e7a54f">
+			<h3 class="about_names" style="padding:0px"><b>Our Vision</b></h3>
+		</div>
+		<div class="col-md-9" style="background-color:#d1d3ce">
+			<p class="about_des" style="padding:6px">Innovation and entrepreneurship are the wheels that steer the world into a brighter future. The world economy will tumble upon itself if new innovations are not reaped every day. Great ideas result into great undertakings which pave the way for glaring success. It is easier said than done because the process of realizing an idea needs a deep understanding of the world around, and an innate preparedness to cope with failures - an inevitable part of enterprising. In order to facilitate this vision of promoting entrepreneurship in India and the world, E-Cell organizes Eureka!, an international business model competition. Eureka! provides a platform for potential ideas and early stage startups to evaluate their plan in the risk free environment of a competition. It aims to bridge the gap between ideas and the realization of an enterprise.</p>
+		</div>
+	</div>
+    </div>
+	</div>
+
+	<div class="heading">
+		<h2 class="heading_inside">Contact Us</h2>
+		<img src="small2.jpg">
+	</div>
+	<div class="container"
+	<div class="contact col-md-10 col-md-offset-1">
+		<div class="row">
+			<div class="col-md-7">
+				<h1 style="color:#d1d3ce">For any queries, contact:</h1>
+				<div class="col-md-4" >
+					<img class="manager_pic" src="kushal.jpg" width="170px">
+					<div class="personal_details">
+						<p style="color:">Kushal Agarwal</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-9163779100</p>
+						<p style="color:">kushal@ecell.in</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img class="manager_pic" src="praveen.jpg" width="170px">
+					<div class="personal_details">
+						<p style="color:">Praveen Saran</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-8209722134</p>
+						<p style="color:">praveen_s@ecell.in</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img class="manager_pic" src="sumitra.jpg" width="170px">
+					<div class="personal_details">
+						<p style="color:">Sumitra Charan</p>
+						<p style="color:">Events Head</p>
+						<img src="">
+						<p style="color:">+91-8291339497</p>
+						<p style="color:">sumitra@ecell.in</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-5">
+				<h1 style="color:#d1d3ce">Leave a Message</h1>
+				<!-- <form> -->
+					<input placeholder="Name" class="input row" name="name" rows="40" height="100"><br>
+					<input placeholder="Email" class="input row" size="30"><br>
+					<input placeholder="Mobile" class="input row" size="30"><br>
+					<input placeholder="Message" class="input row" size="30">
+				<!-- </form> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="footer">
+		<div class="col-md-10 col-md-offset-1" style="background-color:#1b222c">
+			<img src="ecell_logo.png" width="70px" style="margin-left:47%">
+			<p style="color:#d1d3ce;text-align:center"><b>The Entrepreneurship Cell,IIT Bombay</b></p>
+			<p style="color:#d1d3ce;text-align:center">E-Cell Office, Student Activity Centre, IIT Bombay, Mumbai-400076</p><br>
+			<!-- <div class="col-xs-8 col-xs-offset-2" > -->
+				<div class="col-xs-3"><span class="fa fa-facebook" style="color:blue">
+				<span class="fa fa-linkedin">
+				<span class="fa fa-twitter">
+				<span class="fa fa-instagram"></div> 
+			</div>
+		</div>
+	</div>
+	<script>
+		// $(".part").mouseover(function(){
+		// 	$(".dot").show();
+		// });
+		// $(".part").mouseover(function(){
+		// 	$(".dot").hide();
+		// });
+		$(".structure").click(function(){
+			$(".options").show();
+			$(".line1").show();
+			$(".line2").show();
+		});
+
+		// $(".option1").onclick(function(){
+		// 	$(".options").show();
+		// });
+
+		
+		// $(".structure").mousedown(function(){
+		// 	$(".options").hide();
+		// });
+
+	</script>
+	<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+</body>

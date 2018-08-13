@@ -1,0 +1,453 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+@keyframes rotate{
+  from{ transform:rotate(0deg); }
+  10%{transform:rotate(10deg);}
+  20%{transform:rotate(20deg);}
+  30%{transform:rotate(30deg);}
+  40%{transform:rotate(40deg);}
+  50%{transform:rotate(50deg);}
+  60%{transform:rotate(40deg);}
+  70%{transform:rotate(30deg);}
+  80%{transform:rotate(20deg);}
+  90%{transform:rotate(10deg);}
+  100%{transform:rotate(0deg);} 
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  margin-right:-10%;
+}
+.prev{
+  margin-left:-20%;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade1 {
+  -webkit-animation-name: fade1;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade1;
+  animation-duration: 1.5s;
+}
+.rotate{
+    -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+  animation-name: rotate;
+  animation-duration: 1.5s;
+}
+.right{
+    -webkit-animation-name:right;
+  -webkit-animation-duration: 1.5s;
+  animation-name: right;
+  animation-duration: 1.5s;
+}
+@keyframes right{
+   from{transform: translateX(0px);}
+   to{transform:translateX(40px);}
+}
+@keyframes left{
+   from{transform: translateX(40px);}
+   to{transform:translateX(0px);}
+}
+.left{
+    -webkit-animation-name:left;
+  -webkit-animation-duration: 1.5s;
+  animation-name:left;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade1 {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+@keyframes fade1 {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.line{
+  height:0px;
+  width:1px;
+  border-right:1px solid #000;
+  
+  -webkit-animation: increase 3s;
+  -moz-animation:    increase 3s; 
+  -o-animation:      increase 3s; 
+  animation:         increase 3s; 
+  animation-fill-mode: forwards;
+}
+
+@keyframes increase {
+    100% {
+        height: 300px;
+    }
+}
+
+#halfclip {
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left center;
+}
+
+/*#container:hover #halfclip {
+    animation: cliprotate 6s 1;
+    transform: rotate(180deg);
+} */
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(0deg);}
+  50.01% {transform: rotate(180deg);}
+  100% {transform: rotate(180deg);}
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 25px transparent;
+   border-top-color: blue;
+   border-left-color: blue;
+   border-radius: 50%;
+}
+
+#clipped {
+    width: 200%;
+    transform: rotate(-45deg);
+}
+/*#container:hover #clipped {
+    transform: rotate(135deg);
+    animation: rotate 3s linear 2;
+}*/
+
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+    opacity: 0;
+}
+
+/*#container:hover #fixed {
+    opacity: 1;
+    animation: showfixed 6s 1;
+}*/
+
+
+
+@keyframes showfixed {
+  0% {opacity: 0;}
+  49.99% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}#container {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+   /*border: solid red 1px;*/
+   margin-left:0%;
+   animation: colors 1s infinite;
+}
+
+#halfclip {
+  width: 50%;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+   overflow: hidden;
+   transform-origin: left center;
+   animation: cliprotate 4s steps(2) infinite;
+   -webkit-animation: cliprotate 4s steps(2) infinite;
+}
+
+.halfcircle {
+  box-sizing: border-box;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+  border: solid 5px transparent;
+   border-top-color: blue;
+   border-left-color: blue;
+   border-radius: 50%;
+}
+#clipped {
+  width: 200%;
+   animation: rotate 2s linear 2;
+   -webkit-animation: rotate 2s linear 2;
+}
+#fixed {
+  width: 100%;
+    transform: rotate(135deg);  
+   animation: showfixed 4s steps(2) 2;
+   -webkit-animation: showfixed 4s linear 2;
+}
+
+@-webkit-keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes cliprotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+
+@-webkit-keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@keyframes rotate {
+  0% {transform: rotate(-45deg);}
+  100% {transform: rotate(135deg);}
+}
+
+@-webkit-keyframes showfixed {
+  0% {opacity: 0;}
+  49.9% {opacity: 0;}
+  50% {opacity: 1;}
+ 100% {opacity: 1;}
+}
+</style>
+</head>
+<body>
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <div class="col-xs-3">
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <img src="sumitra.jpg" style="width:100%;float:left;z-index:0">
+      <img src="shruti_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+    </div>
+    <div class="col-xs-8" style="background-color:#d1d3ce ">
+      <div class="col-xs-2">
+         <h3 style="font-size:20px" class="left">KIBO</h3>
+      </div>
+      <div class="col-xs-4" style="margin-left:30% !important">
+        <div id="container" style="background-image:url('jordy.jpg')">
+            <div id="halfclip">
+            <div class="halfcircle" id="clipped">
+            </div>
+            </div>
+                <div class="halfcircle" id="fixed">
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-2" style="font-size:20px">
+          <h3 class="right">2015</h3>
+      </div>
+          <div >
+                <p style="background-color:#d1d3ce;font-size:20px"><br><br>kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+          </div>
+          <div class="text">Caption Text</div>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </div>
+
+<div class="mySlides">
+  
+  <div class="col-xs-3">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
+    <img src="parag_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+  </div>
+  <div class="col-xs-8" style="background-color:#d1d3ce ">
+       <div class="col-xs-2">
+       <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
+      </div>
+      <div class="col-xs-4" style="margin-left:30% !important">
+        <div id="container" style="background-image:url('jordy.jpg')">
+            <div id="halfclip">
+            <div class="halfcircle" id="clipped">
+            </div>
+            </div>
+                <div class="halfcircle" id="fixed">
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-2" style="float:right;font-size:20px">
+          <h3 class="right">2015</h3>
+      </div>
+      <div>
+          <p style="background-color:#d1d3ce;font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+      </div>
+      <div class="text">Caption Two</div>
+      <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+</div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    
+      <div class="col-xs-3">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
+          <img src="prevee_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
+      </div>
+      <div class="col-xs-8" style="background-color:#d1d3ce ">
+          <div class="col-xs-2">
+              <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
+          </div>
+          <div class="col-xs-4" style="margin-left:30% !important">
+          <div id="container" style="background-image:url('jordy.jpg')">
+              <div id="halfclip">
+                  <div class="halfcircle" id="clipped">
+                  </div>
+                  </div>
+                      <div class="halfcircle" id="fixed">
+                  </div>
+              </div>
+          </div>
+          <div class="col-xs-2" style="float:right;font-size:20px">
+              <h3 class="right">2015</h3>
+          </div>
+          <div class="fade1">
+              <p style="font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
+          </div>
+          <div class="text">Caption Three</div>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+  </div>
+  <!-- Next and previous buttons -->
+</div>
+<br>
+
+<!-- The dots/circles -->
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+$(".prev").click(function(){
+  $(".line").show()
+});
+</script>
+<div class="line" style="display:none;margin-left:5px">
+
+</body>
