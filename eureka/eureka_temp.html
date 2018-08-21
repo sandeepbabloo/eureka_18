@@ -3,17 +3,94 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- jQuery library -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="style.css"> -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<meta name="author" content="Sandeep Kosuri">
 	<meta name="Description" content="Eureka is Asia's Largest B-Model Competition">
 
 	<title>Eureka! 2018</title>
 	<style>
+	p a{
+
+	}
+	
+	.button28 {
+	color: rgba(255,255,255,1);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	position: relative;
+}
+.button28 span{
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.button28 a{
+	color: rgba(51,51,51,1);
+	text-decoration: none;
+	display: block;
+}
+.button28::before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(255,255,255,0.5);
+	border-bottom-color: rgba(255,255,255,0.5);
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+	
+}
+.button28:hover span{
+	letter-spacing: 2px;
+	}
+.button28:hover::before{
+	opacity: 1;	
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
+	
+}
+.button28::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.25);
+	
+}
+.button28:hover::after{
+	opacity: 0;	
+	-webkit-transform: scale(0.1, 1);
+	transform: scale(0.1, 1);
+}
 		/*h1{
 			width: 100%;
 			top: 0px;
@@ -112,29 +189,44 @@
 
 		li{
 			float:right;
-			padding:16px;
+			padding:13px;
 			/*padding-bottom: 0px;*/
 			color:#d1d3ce;
 			/*background-color:#222e3c;*/
-			font-size: 18px;
+			font-size: 1.18vw;
+			font-weight:100;
 			cursor:pointer;
+			vertical-align: middle;
 			/*font-weight:500;*/
+		}
+		li:hover{
+			color:#d07f40;
 		}
 		li a{
 			color:#d1d3ce;
 		}
 		li a:hover{
 			color:#d07f40;
+			text-decoration:none;
 		}
-		.non{
+		p a{
+			color:white;
+		}
+		p a:hover{
+			color:black;
+		}
+		p{
+			margin: 0 0 0px;
+		}
+		/*.non{
 			margin-top:7.5px;
 			margin-left:7.5px;
 			margin-right:7.5px;
 			padding:5px;
 			border-radius:5px;
 			border:2px solid #d1d3ce;
-		}
-		li:hover{
+		}*/
+		.tabs:hover{
 			color:#d07f40;
 			/*padding-bottom:0px;*/
 		}
@@ -145,25 +237,28 @@
 			padding:0px;
 		}
 		.head{
-			border-bottom-color:linear-gradient(#020202,#181818);
-			border-bottom:5px solid;
+			box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
+			/*border-bottom-color:linear-gradient(#020202,#181818);*/
+			/*border-bottom:5px solid;*/
 			width:100%;
 			position:fixed;
 			margin:0px;
+			background-image:url('header.png');
+			z-index:1000;
 			/*height:100vh;*/
-			z-index:100;
+			/*z-index:100;*/
 		}
 		.heading{
 			/*background-color:#222e3c;*/
 			/*width:100%;*/
 			color:#d1d3ce;
 			box-shadow: 0px 4px  rgba(0, 0, 0, 0.2);
-			padding-top:3px;
-			padding-bottom:0px;
+			padding-top:10px;
+			padding-bottom:0px !important;
 		}
 		.heading_inside{
-			margin-left:100px;
-			font-size:35px;
+			margin-left:5%;
+			font-size:30px;
 			float:left;
 			padding-right:20px;
 		}
@@ -186,16 +281,20 @@
 		th:hover{
 			background-color: #d07f40;
 		}
+		th:active{
+			background-color: #d07f40;
+		}
 		.parts{
 			border: 2px solid #d1d3ce;
 		}
 		.options{
-			display:none;
 			background-color:#e7a54f;
+			padding-left:15px;
+			vertical-align:middle;
 		}
 		.matter{
 			border: 2px solid #d1d3ce;
-			height:500px;
+			/*height:80vh;*/
 		}
 		.tabs{
 			z-index:1;
@@ -212,7 +311,27 @@
 			padding-bottom:15px;
 			font-size:80px;
 			color:#d1d3ce;
-			text-shadow:40px 40px #d07f40;
+			/*text-shadow:40px 40px #d07f40;*/
+			margin:0px;
+			text-align: center;
+     text-shadow: 
+      0 -1px 0 #fff, 
+      0 1px 0 #2e2e2e, 
+      0 2px 0 #2c2c2c, 
+      0 3px 0 #2a2a2a, 
+      0 4px 0 #282828, 
+      0 5px 0 #262626, 
+      0 6px 0 #242424, 
+      0 7px 0 #222, 
+      0 8px 0 #202020, 
+      0 9px 0 #1e1e1e, 
+      0 10px 0 #1c1c1c, 
+      0 11px 0 #1a1a1a, 
+      0 12px 0 #181818, 
+      0 13px 0 #161616, 
+      0 14px 0 #141414, 
+      0 15px 0 #121212, 
+      0 22px 30px rgba(0, 0, 0, 0.9);
 		}
 		.stats_names{
 			/*padding-top:15px;
@@ -221,11 +340,15 @@
 			color:black;
 			/*text-shadow:40px 40px #d07f40;*/
 			text-align:center;
+			background-color: white;
+			margin-bottom:0px;
+			padding:10px;
 		}
 		.incent_part{
 			width:90%;
 			box-shadow: 5px 5px #151c24;
 			cursor:pointer;
+			margin-bottom:5%;
 		}
 		.incent_part:hover{
 			box-shadow: 10px 10px #151c24;
@@ -233,13 +356,14 @@
 		}
 		.about_names{
 			color:#d1d3ce;
-			font-size:60px;
+			font-size:4.17vw;
 			text-align:center;
 		}
 		.about_des{
 			color:black;
-			font-size:14px;
-			padding:5px;
+			/*font-size:12px;*/
+			/*padding-top:0.6vw;*/
+			/*padding:5px;*/
 			/*text-align:center;*/
 		}
 		.personal_details{
@@ -247,30 +371,40 @@
 			text-align:center;
 		}
 		.input{
-			border-radius:3px;
+			border-radius:6px;
 			background-color:#222e3c;
 			border: 1px solid #d1d3ce;
 			margin-bottom:15px;
+			padding:5px;
+			color:#d1d3ce;
+		}
+		input{
+			width:100%;
+		}
+		.message{
+				height:20vh;
+			}
+		@media only screen and(max-width:800px){
+			.message{
+				height:5vh !important;
+			}
 		}
 		.main{
-			background-image:url('eureka_cover.jpg');
-			background-size:cover;
-			z-index:200;
-			width:100%;
-			height:110vh;
+			/*background-image:url('eureka_c2.png');*/
+			/*background-size:cover;*/
+			/*z-index:200;*/
+			/*width:100%;*/
+			/*height:75vh;*/
 			border:0px solid black;
 		}
-		.about{
-			box-shadow:	5px 5px #151c24;
-			cursor:pointer;
-		}
-		.about:hover{
-			box-shadow:	10px 10px #151c24;
-		}
+		
 		.manager_pic{
 			box-shadow:	5px 5px #151c24;
 			margin-bottom:5px;
 			cursor:pointer;
+			width:100%;
+			display:block;
+
 		}
 		.manager_pic:hover{
 			box-shadow:	8px 8px #151c24;
@@ -279,11 +413,29 @@
 			background-color:#222e3c;
 			border-radius:5px;
 			border:2px solid #d1d3ce; 
-			margin-top:384px;
 			color:#d1d3ce;
 			font-size:18px;
+			padding:2.5px 30px 2.5px 30px;
+			display:block;
+			margin:auto;
 		}
 		.but1{
+			padding:2.5px 44px 2.5px 44px;
+		}
+		.but1:hover,.but2:hover,.sub:hover{
+			border:2px solid #d07f40;
+			color: #d07f40;
+		}
+		.sub{
+			background-color:#222e3c;
+			border-radius:5px;
+			border:2px solid #d1d3ce; 
+			/*margin-top:384px;*/
+			color:#d1d3ce;
+			font-size:18px;
+			padding: 2.5px 15px 2.5px 15px;
+		}
+		/*.but1{
 			padding-left: 45px;
     		padding-right: 45.5px;
     		margin-left: 152.1px;
@@ -296,36 +448,29 @@
     		padding-right: 40px;
     		padding-top: 5px;
     		padding-bottom: 5px;
-		}
-		.menu{
+		}*/
+		/*.menu{
 			padding-bottom:5px;
 			padding-top:5px;
-		}
+		}*/
 		* {box-sizing:border-box}
 
 /* Slideshow container */
-.slideshow-container {
+/*.slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
-}
+}*/
 
 /* Hide the images by default */
 .mySlides {
     display: none;
 }
-@keyframes rotate{
+@keyframes rotate_image{
   from{ transform:rotate(0deg); }
-  10%{transform:rotate(10deg);}
-  20%{transform:rotate(20deg);}
-  30%{transform:rotate(30deg);}
-  40%{transform:rotate(40deg);}
-  50%{transform:rotate(50deg);}
-  60%{transform:rotate(40deg);}
-  70%{transform:rotate(30deg);}
-  80%{transform:rotate(20deg);}
-  90%{transform:rotate(10deg);}
-  100%{transform:rotate(0deg);} 
+  50%{ transform:rotate(180deg);}
+  to{transform:rotate(360deg);}
+
 }
 /* Next & previous buttons */
 .prev, .next {
@@ -343,13 +488,16 @@
 }
 
 /* Position the "next button" to the right */
+.button-section{
+	margin-top:-10%;
+}
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
-  margin-right:-10%;
+  margin-right:-4%;
 }
 .prev{
-  margin-left:-20%;
+  margin-left:-21%;
 }
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
@@ -379,8 +527,8 @@
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 5px;
+  width: 5px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -399,11 +547,12 @@
   animation-name: fade1;
   animation-duration: 1.5s;
 }
-.rotate{
-    -webkit-animation-name: rotate;
+.rotate_image{
+    -webkit-animation-name: rotate_image;
   -webkit-animation-duration: 1.5s;
-  animation-name: rotate;
+  animation-name: rotate_image;
   animation-duration: 1.5s;
+  animation-timing-function:linear;
 }
 .right{
     -webkit-animation-name:right;
@@ -412,8 +561,9 @@
   animation-duration: 1.5s;
 }
 @keyframes right{
-   from{transform: translateX(0px);}
-   to{transform:translateX(40px);}
+   from{transform: translateX(40px);}
+   to{transform:translateX(0px);}
+   animation-fill-mode:backwards;
 }
 @keyframes left{
    from{transform: translateX(40px);}
@@ -455,7 +605,8 @@
   -moz-animation:    increases 3s; 
   -o-animation:      increases 3s; 
   animation:         increases 3s; 
-  animation-direction:reverse;
+  /*animation-direction:reverse;*/
+  animation-fill-mode: forwards;
 }
 
 @keyframes increased {
@@ -464,10 +615,7 @@
     }
 }
 @keyframes increases {
-	from{
-		width:0px;
-	}
-    to{
+    100%{
         width:100px;
     }
 }
@@ -554,8 +702,8 @@
   position: absolute;
    overflow: hidden;
    transform-origin: left center;
-   animation: cliprotate 4s steps(2) 2;
-   -webkit-animation: cliprotate 4s steps(2) 2;
+   animation: cliprotate 1s steps(2) 2;
+   -webkit-animation: cliprotate 1s steps(2) 2;
 }
 
 .halfcircle {
@@ -564,20 +712,20 @@
   right: 0px;
   position: absolute;
   border: solid 5px transparent;
-   border-top-color: blue;
-   border-left-color: blue;
+   border-top-color:#e7a54f;
+   border-left-color:#e7a54f;
    border-radius: 50%;
 }
 #clipped {
   width: 200%;
-   animation: rotate 2s linear 2;
-   -webkit-animation: rotate 2s linear 2;
+   animation: rotate 0.5s linear 2;
+   -webkit-animation: rotate 0.5s linear 2;
 }
 #fixed {
   width: 100%;
     transform: rotate(135deg);  
-   animation: showfixed 4s steps(2) 1;
-   -webkit-animation: showfixed 4s linear 1;
+   animation: showfixed 1s steps(2) 1;
+   -webkit-animation: showfixed 1s linear 1;
 }
 
 @-webkit-keyframes cliprotate {
@@ -610,359 +758,715 @@
 strong{
 	color:#d07f40;
 }
+#back2{
+	z-index: 100;
+    width: 162px;
+    margin-left: 70%;
+    margin-top: 17%;
+    margin-bottom: -21%;
+}
+.inner_image{
+	width:79%;border-radius:50%;z-index:2;margin-left:12.2%;margin-top:-109%;
+}
+.outer_image{
+	width:100%;float:left;z-index:0;display:block;margin:auto;
+}
+.sector{
+	margin-bottom:4%;
+}
+.center{
+	display:block;
+	margin:auto;
+}
+
+.separator{
+	height:5vh;
+	width:100%;
+}
 </style>
 
 </head>
-<body style="background-color:#222e3c;">
-
+<body style="background-color:rgb(34,46,60);font-family: 'Helvetica', serif;">
+ 
 	<header>
-			<div class="head row" style="background-color:#222e3c;margin-right:0px">
-				<ul type="none" class="menu">
-					<li>Contact Us</li>
-					<li class="part">About Us</li>
-					<li>Sponsors</li>
-					<li class="non"><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
-					<li class="non"><a href="https://ecell.in/illuminate" target="_blank">Illuminate</a></li>
-					<li>Incentives</li>
-					<li>Competition</li>
-					<li>Home</li>
+			<div class="head row col-md-12 col-lg-12 hidden-xs hidden-sm" style="background-image: url('header.png')">
+				<img src="eureka_logo.png" width="10%" style="float:left">
+				<ul type="none" class="menu" style="float:right;margin-bottom:-2%">
+					<li >Contact Us</li>
+					<li >About Us</li>
+					<li >Sponsors</li>
+					<li ><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
+					<li ><a href="https://ecell.in/illuminate">Illuminate</a></li>
+					<li >Incentives</li>
+					<li >Competition</li>
+					<li >Home</li>
+					
 				</ul>
 		    </div>
 		    <!-- <img src="boost1.jpg" style="width:100%"> -->
 	</header>
-
+	<!-- <img src="comp.gif" style="background-color:#222e3c"> -->
+	<!-- <img src="back2.png"  id="back2" style="z-index:100;width:50px"> -->
 	<div class="main" >
-			<button class="but1">Login</button>
-			<button class="but2">Register</button>
+		<div class="col-md-12">
+			<div class="col-md-5">
+				<div class="col-md-12 hidden-xs hidden-sm"><img src="cover1.jpg" style="width:100%"></div>
+			<!-- TESTIMONIALS SLIDESHOW START -->
+			</div>
+			<div class="col-md-7">
+					<img src="cover2.jpg" style="width:100%">
+			</div>
+			<div class="col-md-6 button-section">
+				<div class="col-md-6"><button class="but2">Register</button></div>
+				<div class="col-md-6"><button class="but1" >Login</button></div>
+			</div>
+		</div>
 	</div>
+			<div class="section hidden-sm hidden-xs container">
+
+			  <!-- Full-width images with number and caption text -->
+
+				<div class="mySlides col-md-12">
+					
+					  <div class="col-md-2" style="padding:0px">
+					    	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					    	
+					    	<img src="incentive_image.jpg" class="outer_image" >
+					    	<img src="leaf.png" class="rotate_image inner_image">
+					    
+					  </div>
+					
+					  <div class="col-md-10" style="background-color:#d1d3ce">
+					       	<div class="col-md-4">
+					       		<h3 style="text-align:center" class="left">Leaf Wearables</h3>
+					      	</div>
+						      <div class="col-md-4">
+						        <div id="container">
+						            <div id="halfclip">
+						            	<div class="halfcircle" id="clipped">
+						            	</div>
+						            </div>
+						                <div class="halfcircle" id="fixed">
+						            	</div>
+						        </div>
+						      </div>
+						      <div class="col-md-4">
+						          <h3 class="right" style="text-align:center">2014</h3>
+						      </div>
+						      <div>
+						          <p style="background-color:#d1d3ce;font-size:1.3vw;padding:3.5vw">I have been to multiple business plan events but haven't seen anything like Eureka ever.The media coverage that we got post being announced as the winner was something unexpected and that definitely helped us in reaching out and connecting to a mass audience.</p>
+						      </div>
+					      <!-- <div class="text"></div> -->
+						      <div style="text-align:center">
+						            <span class="dot" onclick="currentSlide(1)"></span> 
+						            <span class="dot" onclick="currentSlide(2)"></span> 
+						            <span class="dot" onclick="currentSlide(3)"></span> 
+						      </div>
+					      	  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+					  </div>
+				</div>
+
+			  <!-- Full-width images with number and caption text -->
+
+				<div class="mySlides col-md-12">
+					    <!-- <div class="numbertext">3 / 3</div> -->
+					    
+					      <div class="col-md-2" style="padding:0px">
+					        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					          <img src="incentive_image.jpg" class="outer_image">
+					          <img src="greensole.png" class="rotate_image inner_image" >
+					      </div>
+					      <div class="col-xs-10" style="background-color:#d1d3ce">
+					          <div class="col-md-3">
+					              <h3 class="left">Greensole</h3>
+					          </div>
+					          <div class="col-md-6">
+					          <div id="container" style="background-image:url('load.jpg')">
+					              <div id="halfclip">
+					                  <div class="halfcircle" id="clipped">
+					                  </div>
+					                  </div>
+					                      <div class="halfcircle" id="fixed">
+					                  </div>
+					              </div>
+					          </div>
+					          <div class="col-md-3">
+					              <h3 class="right">2014</h3>
+					          </div>
+					          <div >
+					              <p style="background-color:#d1d3ce;font-size:1.3vw;padding:5vw">After completing the journey of Eureka, Asia's largest B-plan competition, your start-up idea will no longer remain a plan, as it will become into a venture</p>
+					          </div>
+					          <!-- <div class="text">Caption Three</div> -->
+					          <div style="text-align:center">
+					            <span class="dot" onclick="currentSlide(1)"></span> 
+					            <span class="dot" onclick="currentSlide(2)"></span> 
+					            <span class="dot" onclick="currentSlide(3)"></span> 
+					            <span class="dot" onclick="currentSlide(4)"></span> 
+					          </div>
+					          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+					        </div>
+				</div>
+
+				<div class="mySlides col-md-12">
+					    <div class="numbertext"></div>
+					    <div class="col-md-2" style="padding:0px">
+					      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					      <img src="incentive_image.jpg" class="outer_image">
+					      <img src="kibo.png" class="rotate_image inner_image" >
+					    </div>
+					    <div class="col-md-10" style="background-color:#d1d3ce">
+					      <div class="col-md-3">
+					         <h3 style="font-size:20px" class="left">KIBO</h3>
+					      </div>
+					      <div class="col-md-6">
+					        <div id="container" style="background-image:url('load.jpg')">
+					            <div id="halfclip">
+					            <div class="halfcircle" id="clipped">
+					            </div>
+					            </div>
+					                <div class="halfcircle" id="fixed">
+					            </div>
+					        </div>
+					      </div>
+					      <div class="col-md-3">
+					          <h3 class="right">2015</h3>
+					      </div>
+					          <div>
+					                <p style="background-color:#d1d3ce;font-size:1.18vw;padding:2.3
+					                vw">Eureka for us was more than just a business model competition, it was a virtual incubator. The shift from B-plan to B-model benefited us widely as the timeline of the competition kept us motivated to step beyond having just a 10-slide business deck to actually going out there, creating an MVP and testing the waters. Thanks to E-cell, IIT Bombay for organizing such a professional contest and here's to creating many more success stories!</p>
+					          </div>
+					          <div style="text-align:center">
+					            <span class="dot" onclick="currentSlide(1)"></span> 
+					            <span class="dot" onclick="currentSlide(2)"></span> 
+					            <span class="dot" onclick="currentSlide(3)"></span> 
+					            <span class="dot" onclick="currentSlide(4)"></span> 
+					          </div>
+					          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+					    </div>
+				</div>
+
+				<div class="mySlides col-md-12">
+					    <div class="numbertext"></div>
+					    <div class="col-md-2" style="padding:0px">
+					      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+					      <img src="incentive_image.jpg" class="outer_image">
+					      <img src="shruti_m.jpg" class="rotate_image inner_image" >
+					    </div>
+					    <div class="col-md-10" style="background-color:#d1d3ce">
+					      <div class="col-md-3">
+					         <h3 class="left">KIBO</h3>
+					      </div>
+					      <div class="col-md-6">
+					        <div id="container" style="background-image:url('load.jpg');display:table-cell; vertical-align:middle; text-align:center">
+					            <div id="halfclip">
+					            <div class="halfcircle" id="clipped">
+					            </div>
+					            </div>
+					            <div class="halfcircle" id="fixed">
+					            </div>
+					        </div>
+					      </div>
+					      <div class="col-md-3">
+					          <h3 class="right">2015</h3>
+					      </div>
+					          <div >
+					                <p style="background-color:#d1d3ce;font-size:1.18vw;padding:5.9vw">Participating in Eureka was a great experience! Highly recommend it to aspiring student entrepreneurs!</p>
+					          </div>
+					          <!-- <div class="text">Caption Text</div> -->
+					          <div style="text-align:center">
+					            <span class="dot" onclick="currentSlide(1)"></span> 
+					            <span class="dot" onclick="currentSlide(2)"></span> 
+					            <span class="dot" onclick="currentSlide(3)"></span>
+					            <span class="dot" onclick="currentSlide(4)"></span>  
+					          </div>
+					          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+					    </div>
+				</div>
+				  <!-- Next and previous buttons -->
+			</div>
+		
 	
-	<div class="slideshow-container" style="margin-top:-15%;margin-left:0px;margin-right:0px">
-
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides col-xs-12">
-    <div class="numbertext"></div>
-    <div class="col-xs-3">
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <img src="sumitra.jpg" style="width:100%;float:left;z-index:0">
-      <img src="shruti_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
-    </div>
-    <div class="col-xs-8" style="background-color:#d1d3ce ">
-      <div class="col-xs-2">
-         <h3 style="font-size:20px" class="left">KIBO</h3>
-      </div>
-      <div class="col-xs-4" style="margin-left:30% !important">
-        <div id="container" style="background-image:url('jordy.jpg')">
-            <div id="halfclip">
-            <div class="halfcircle" id="clipped">
-            </div>
-            </div>
-                <div class="halfcircle" id="fixed">
-            </div>
-        </div>
-      </div>
-      <div class="col-xs-2" style="font-size:20px">
-          <h3 class="right">2015</h3>
-      </div>
-          <div >
-                <p style="background-color:#d1d3ce;font-size:20px"><br><br>kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
-          </div>
-          <div class="text">Caption Text</div>
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-          </div>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-  </div>
-
-<div class="mySlides">
-  
-  <div class="col-xs-3">
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
-    <img src="parag_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
-  </div>
-  <div class="col-xs-8" style="background-color:#d1d3ce ">
-       <div class="col-xs-2">
-       <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
-      </div>
-      <div class="col-xs-4" style="margin-left:30% !important">
-        <div id="container" style="background-image:url('jordy.jpg')">
-            <div id="halfclip">
-            <div class="halfcircle" id="clipped">
-            </div>
-            </div>
-                <div class="halfcircle" id="fixed">
-            </div>
-        </div>
-      </div>
-      <div class="col-xs-2" style="float:right;font-size:20px">
-          <h3 class="right">2015</h3>
-      </div>
-      <div>
-          <p style="background-color:#d1d3ce;font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
-      </div>
-      <div class="text">Caption Two</div>
-      <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-      </div>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-</div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 3</div>
-    
-      <div class="col-xs-3">
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <img src="kushal.jpg" style="width:100%;float:left;z-index:0">
-          <img src="prevee_m.jpg" class="rotate" style="width:80%;border-radius:50%;z-index:2;margin-left:7.2%;margin-top:-89.2%">
-      </div>
-      <div class="col-xs-8" style="background-color:#d1d3ce ">
-          <div class="col-xs-2">
-              <h3 style="float:left;font-size:20px" class="left">KIBO</h3>
-          </div>
-          <div class="col-xs-4" style="margin-left:30% !important">
-          <div id="container" style="background-image:url('jordy.jpg')">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
-                  </div>
-                      <div class="halfcircle" id="fixed">
-                  </div>
-              </div>
-          </div>
-          <div class="col-xs-2" style="float:right;font-size:20px">
-              <h3 class="right">2015</h3>
-          </div>
-          <div class="fade1">
-              <p style="font-size:20px">kfjsdlkfjdisfjdskfnldsak<br>fuiwfhdsuknf,dasnfuidshfaudsnkjvncxz,mvniusfudnxcvkfskdfnksanfsnfjs<br>dnfjsndjfansjfnsajkfnskjdafnjalnndsjfns<br>jdnfjdsncjjnsdhfioasjfriew<br>urioewfjdnmc,xn,mcvnsajm,njnsd<br>aufdsujncvdxcnz,m</p>
-          </div>
-          <div class="text">Caption Three</div>
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-          </div>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-  </div>
-  <!-- Next and previous buttons -->
-</div>
-
-	<div class="heading" style="margin-top:20%">
-		<h2 class="heading_inside">Competition</h2>
-		<img src="small.jpg">
-	</div>
-
-	<div class="tabs">
-	<div class="col-md-12" style="margin-top:20px">
-		<div class="row">
-		<div class="content col-md-2 col-md-offset-1">
-			<div class="tabs">
-			<table class="tablist">
-					<tr class="structure"><th>Structure</th></tr>
-					<tr class="options"><th>Timeline</th></tr>
-					<tr class="options"><th>Tracks&Awards</th></tr>
-					<tr><th>Eligibility</th></tr>
-					<tr><th>Rules</th></tr>
-					<tr><th>FAQ's</th></tr>
-					<tr><th>Terms & Conditions</th></tr>
-					<tr><th>Past 18 years</th></tr>
-					<tr><th>Success Stories</th></tr>	
-			</table>	
-		</div>
-		</div>
-			<div class="matter col-md-8">
-				<h3 style="text-align:center;color:#d1d3ce"> Eureka Portal is going to be launched on <strong>25th August</strong></h3>
-			<div class="col-md-3">
-				<img src="part.jpg" height="100px" >
-				<p style="color:white;text-align:center">/</p>
-				<div class="line1" style="display:none;margin-left:5px"></div>
-				<div class="line2" style="display:none;margin-left:5px"></div>
-			</div>
-			<div class="col-md-3">
-				<img src="part.jpg" height="100px" >
-			</div>
-			<div class="col-md-3">
-				<img src="part.jpg" height="100px" >
-			</div>
-			<div class="col-md-3">
-				<img src="part.jpg" height="100px" >
-			</div>		
-			</div>
-		</div>
-	</div>
-	</div>
-
-	<div class="stats col-md-12" style="margin-top:25px">
-		<div class="col-md-offset-2 col-md-3 stats_parts">
-			<p><b>9100</b></p>
-		</div>
-		<div class="col-md-2 stats_parts">
-			<p><b>150</b></p>
-		</div>
-		<div class="col-md-2 stats_parts">
-			<p><b>15</b></p>
-		</div>
-		<div class="col-md-2 stats_parts">
-			<p><b>90</b></p>
-		</div>
-	</div>
-
-	<div class="stats_style col-md-12" style="margin-bottom:40px">
-		<div class="col-md-offset-2 col-md-3 stats_names">
-			<p><b>Entries(Last year)</b></p>
-		</div>
-		<div class="col-md-2 stats_names">
-			<p><b>Mentors</b></p>
-		</div>
-		<div class="col-md-2 stats_names">
-			<p><b>Lacs of Prize Money</b></p>
-		</div>
-		<div class="col-md-2 stats_names">
-			<p><b>Years</b></p>
-		</div>
-	</div>
-
-	<div class="heading">
-		<div class="row">
-			<h2 class="heading_inside">Incentives</h2>
-			<img src="small2.jpg">
-		</div>
-	</div>
-
-	<div class="container" style="margin-top:20px">
-	<div class="col-md-12">
-		<div class="row">
-			<div class="col-md-3" style="margin-bottom:30px">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-			<div class="col-md-3">
-				<img src="incentive_image.jpg" class="incent_part">
-			</div>
-		</div>
-	</div>
-	</div>
+	<!-- <div style="position:fixed;float:right;z-index:50">
+		<span class="fa fa-facebook"></span><br>
+	</div> -->
+<!-- TESTIMONIALS SLIDESHOW END -->
 
 	<div class="heading">
 		<h2 class="heading_inside">About Us</h2>
 		<img src="small.jpg">
 	</div>
 
+	<!-- VISION AND DESC START -->
 	<div class="container" style="margin-top:20px">
-	<div class="col-md-12">
+		<div class="col-sm-12">
 
-	<div class="row about" style="margin-bottom:30px">
-		<div class="col-md-3" style="background-color:#e7a54f">
-			<h3 class="about_names" style="padding:9px;"><b>What is Eureka?</b></h3>
+		<div class="row about" style="margin-bottom:30px">
+			<div class="col-sm-3" style="background-color:#e7a54f">
+				<h3 class="about_names" style="padding:1.46vw;"><b>What is Eureka?</b></h3>
+			</div>
+			<div class="col-sm-9" style="background-color:#d1d3ce">
+				<p class="about_des" style="padding:1.0vw">Instated to foster the spirit of entrepreneurship and business acumen among people all around the world , Eureka! fast-tracks the journey from an innovative idea to a commercial success. Eureka! is Asia's largest business model competition accredited independently by CNN and Thomson Reuters. Designed to emulate the process of growth of an idea towards a full-fledged startup. Eureka! prides itself on providing a 360 degree, holistic experience in the 5 month period that it spans. Right from acknowledging that your idea has a potential, to drafting a B-Model and pitching in front of an esteemed panel of investors, this platform has it all! Over the 17 years of its existence, Eureka! has grown from a competition in which 50 teams competed for INR 50,000 to a competition which sees over 8000 entries competing for prizes worth INR 5 Million at stake with excellent networking opportunities in India and the Silicon Valley !</p>
+			</div>
 		</div>
-		<div class="col-md-9" style="background-color:#d1d3ce">
-			<p class="about_des" >Instated to foster the spirit of entrepreneurship and business acumen among people all around the world , Eureka! fast-tracks the journey from an innovative idea to a commercial success. Eureka! is Asia's largest business model competition accredited independently by CNN and Thomson Reuters. Designed to emulate the process of growth of an idea towards a full-fledged startup. Eureka! prides itself on providing a 360 degree, holistic experience in the 5 month period that it spans. Right from acknowledging that your idea has a potential, to drafting a B-Model and pitching in front of an esteemed panel of investors, this platform has it all! Over the 17 years of its existence, Eureka! has grown from a competition in which 50 teams competed for INR 50,000 to a competition which sees over 8000 entries competing for prizes worth INR 5 Million at stake with excellent networking opportunities in India and the Silicon Valley !</p>
+
+		<div class="row about">
+			<div class="col-sm-3" style="background-color:#e7a54f">
+				<h3 class="about_names" style="padding:0.72vw"><b>Our Vision</b></h3>
+			</div>
+			<div class="col-sm-9" style="background-color:#d1d3ce;padding:1.1vw">
+				<p class="about_des">Innovation and entrepreneurship are the wheels that steer the world into a brighter future. The world economy will tumble upon itself if new innovations are not reaped every day. Great ideas result into great undertakings which pave the way for glaring success. It is easier said than done because the process of realizing an idea needs a deep understanding of the world around, and an innate preparedness to cope with failures - an inevitable part of enterprising. In order to facilitate this vision of promoting entrepreneurship in India and the world, E-Cell organizes Eureka!, an international business model competition. Eureka! provides a platform for potential ideas and early stage startups to evaluate their plan in the risk free environment of a competition. It aims to bridge the gap between ideas and the realization of an enterprise.</p>
+			</div>
+		</div>
+	    </div>
+	</div>
+	<!-- VISION AND DESC END -->
+
+	<div class="heading">
+		<h2 class="heading_inside">Competition</h2>
+		<img src="small.jpg">
+	</div>
+
+	<!-- TABLE CONTENT STARTS -->
+	<div class="tab">
+		<div class="col-md-12" style="margin-top:20px">
+			<div class="row">
+			<div class="content col-md-2 col-md-offset-1 hidden-xs hidden-sm">
+				<div class="tabs">
+				<table class="tablist">
+
+					<tr class="structure"><th><p style="float:left">Structure</p><img style="width:15%;top:50%;float: right" src="arrow_down.png"></th></tr>
+
+					<tr id="timeline_head" class="options"><th><p><img class="dot">Timeline</p></th></tr>
+					<tr id="tracks_head" class="options"><th><p style="float:left"><img class="dot"></span>Tracks & Awards</p></th></tr>
+
+					<tr id="eligibility"><th>Eligibility</th></tr>
+
+					<tr id="business_head" style="display:none" class="options"><th><img class="dot">Business Track</th></tr>
+					<tr id="social_head" style="display:none" class="options"><th><img class="dot">Social Track</th></tr>
+					<tr id="IITB_head" style="display:none" class="options"><th><img class="dot">IITB Track</th></tr>
+
+					<tr id="rules"><th><p style="float:left">Rules</p></th></tr>
+
+					<tr id="choose_head" style="display:none" class="options"><th><img class="dot">Choose Track</th></tr>
+					<tr id="round1_head" style="display:none" class="options"><th><img class="dot">Round 1</th></tr>
+					<tr id="round2_head" style="display:none" class="options"><th><img class="dot">Round2</th></tr>
+
+					<tr><th><p style="float:left">FAQ's</p></th></tr>
+
+					<tr id="term"><th><p style="float:left">Terms & Conditions</p></th></tr>
+
+					<tr id="prize_head" style="display:none" class="options"><th><img class="dot">Prize</th></tr>
+					<tr id="bwinner_head" style="display:none" class="options"><th><img class="dot">Business Prize</th></tr>
+					<tr id="swinner_head" style="display:none" class="options"><th><img class="dot">Social Prize</th></tr>
+					<tr id="iitwinner_head" style="display:none" class="options"><th><img class="dot">IITB Prize</th></tr>
+					<tr id="general_head" style="display:none" class="options"><th><img class="dot">General</th></tr>
+					<tr id="others_head" style="display:none" class="options"><th><img class="dot">Others</th></tr>
+
+					<tr><th>Past 18 years</th></tr>
+
+					<tr><th>Success Stories</th></tr>	
+				</table>	
+			</div>
+			</div>
+
+			<div class="content hidden-lg hidden-md  container">
+				<div class="tabs">
+					<ul type="none">
+					 <li class="structure">Structure</li>
+						<li id="timeline_head" class="options">Timeline</li>
+						<li id="tracks_head" class="options">Tracks&Awards</li>
+						<li id="eligibility">Eligibility</li>
+						<li id="business_head" style="display:none" class="options">Business Track</li>
+						<li id="social_head" style="display:none" class="options">Social Track</li>
+						<li id="IITB_head" style="display:none" class="options">IITB Track</li>
+						<li id="rules">Rules</li>
+						<li id="choose_head" style="display:none" class="options">Choose Track</li>
+						<li id="round1_head" style="display:none" class="options">Round 1</li>
+						<li id="round2_head" style="display:none" class="options">Round2</li>
+						<li>FAQ's</li>
+						<li id="term">Terms & Conditions</li>
+						<li id="prize_head" style="display:none" class="options">Prize</li>
+						<li id="bwinner_head" style="display:none" class="options">Business Prize</li>
+						<li id="swinner_head" style="display:none" class="options">Social Prize</li>
+						<li id="iitwinner_head" style="display:none" class="options">IITB Prize</li>
+						<li id="general_head" style="display:none" class="options">General</li>
+						<li id="others_head" style="display:none" class="options">Others</li>
+						<li>Past 18 years</li>
+						<li>Success Stories</li>
+					</ul>	
+				</div>
+			</div>
+
+			<!-- BIG TABLE DATA START -->
+			<div class="matter col-md-8 col-sm-12 col-xs-12 container">
+				<div id="timeline_data">
+					<h3 style="text-align:center;color:#d1d3ce"> Eureka Portal is going to be launched on <strong>25th August</strong></h3>
+					<div class="col-xs-3">
+						<img src="part4.jpg" style="width:100%">
+					</div>
+					<div class="col-xs-3">
+						<img src="part1.jpg" style="width:100%" >
+						<h4 style="color:#d07f40">Business Model Round</h4>
+						<!-- <img src="partb1.jpg" style="width:100%"> -->
+					</div>
+					<div class="col-xs-3">
+						<img src="part2.jpg" style="width:100%">
+						<h4 style="color:#d07f40">Pitching Round</h4>
+						<!-- <img src="partb2.jpg" style="width:100%"> -->
+					</div>
+					<div class="col-xs-3">
+						<img src="part3.jpg" style="width:100%">
+						<h4 style="color:#d07f40">Declration of Results</h4>
+						<!-- <img src="partb3.jpg" style="width:100%"> -->
+					</div>		
+				</div>
+				<div style="display:none" id="social_data">
+					<h2 style="text-align:center;color:#d07f40">Eureka! Business Track</h2>
+					<p style="color:white">
+						
+								Start-ups which have been incorporated more than a year ago (i.e. registered on or before 25th August, 2017) are not eligible to participate in the Business track of Eureka! 2018.
+							
+								There is no restriction on any individual to participate. Anyone, from students to working professionals across the world, can participate.
+							
+								Ventures that have acquired funding from external investor-networks (angels, VC's, etc) cannot participate. We believe in promoting startups that require assistance in the form of seed capital, mentoring and various types of consultancies.
+							
+								Note: Teams may be asked to provide proof of the above at any time during the competition cycle and in the eventuality of wrong details/information your entry shall be disqualified.
+							
+					</p>
+				</div>
+				<div style="display:none" id="business_data">
+					<h2 style="text-align:center;color:#d07f40">Eureka! Business Track</h2>
+					<p style="color:white">		
+								Start-ups which have been incorporated more than two years ago (i.e. registered on or before 25th August, 2016) are not eligible to participate in the Social track of Eureka! 2018.
+							
+								There is no restriction on any individual to participate. Anyone, from students to working professionals across the world, can participate.
+							
+								Ventures that have acquired funding from external investor-networks (angels, VC's, etc.) cannot participate. We believe in promoting startups that require assistance in the form of seed capital, mentoring and various types of consultancies.
+							
+								The plan should solve a critical social and/or environmental problem in an innovative and transformational way.
+							
+								The mission and practices of the venture must focus on quantifiable social return.
+							
+								The venture must be for profit and financially viable; non profit entries will not be accepted.
+							
+								Note: Teams may be asked to provide proof of the above at any time during the competition cycle and in the eventuality of wrong details/ information your entry shall be disqualified. A social venture can technically participate in the Business Track as well. But such a move is highly discouraged.
+
+						
+					</p>
+				</div>
+				<div style="display:none" id="IITB_data">
+					<h2 style="text-align:center;color:#d07f40">Eureka! IITB Track</h2>
+					<p style="color:white">
+								1) Each team must comprise a majority (50% or more) of IIT -B residents (students, faculty and anybody residing in the campus).<br>
+							
+								2)IIT-B residents must be actively involved in the venture.<br>
+							
+								3) Prize money will be given as cheque made in the name of team leader, who should be an IIT Bombay student/resident.<br>
+							
+								4) The final decision rests upon the judges ('85 batch alumni) and thus the participating team should also satisfy any other criteria as and when put forward by them.<br>
+							
+								5) Ventures of IIT Bombay residents should satisfy the norms mentioned in the above policy.<br>
+							
+								Note: To know more about the institute policy of IIT-B on intellectual property, visit: <a href="https://www.ircc.iitb.ac.in/webnew/ippolicy.html" target="_blank">https://www.ircc.iitb.ac.in/webnew/ippolicy.html</a><br>
+								Teams can be asked to provide proof of the above at any time during the competition cycle and in the eventuality of any wrong detail/information, your entry can be disqualified.	
+					</p>
+				</div>
+				<div style="display:none" id="choose_data">
+					<h2 style="text-align:center;color:#d07f40">Choose Business or Social Track </h2>
+					<p style="color:white">
+								1) There is a common registration portal for both Eureka! Business and Social tracks.<br>
+							
+								2)Teams must select their track while submitting their ideas in Eureka!.<br>
+							
+								3)Teams must select their track after viewing the Eligibility Criteria for both the tracks.<br>
+							
+								4) Once a team selects its track, it cannot be changed.<br>
+					</p>
+				</div>
+				<div style="display:none" id="round1_data">
+					<h2 style="text-align:center;color:#d07f40">Round 1 Rules</h2>
+					<p style="color:white">		
+								1) Teams must answer each question in the questionnaire in order to be considered for evaluation. Please note that in the case of applying for Eureka! Business track, participants are not required to fill in the questions corresponding to "Social Impact" while it is mandatory for entries applying to Eureka! Social.<br>
+							
+								2) The questionnaire of Eureka! is so designed that compiling the answers to the questions would create a basic but complete image of the idea. A participant is expected to answer all questions in the questionnaire in detail.<br>
+							
+								3) The answers to the questionnaire can be saved and edited repeatedly till the last day of submission i.e. 28th September, 2018. The last saved answers would be frozen at 11:59 pm IST on 28th September, 2018.<br>
+							
+								4) Entries submitted after the deadline will not be considered. The name given to the idea/entry cannot be changed for the second round. However any change in name for the third and final round can be done by bringing it to our notice, stating the reference code for the entry.<br>				
+					</p>
+				</div>
+				<div style="display:none" id="round2_data">
+					<h2 style="text-align:center;color:#d07f40">Round 2 Rules</h2>
+					<p style="color:white">
+						
+								1) Only teams that qualify for the second round are eligible for submitting their final business model.<br>
+							
+								2) Participants will be allotted sector-specific mentors according to their require and mentoring will take place via email, video conferencing and telephone calls.<br>
+							
+								3) Please submit the draft of the B-Model (need not be final, complete B-Model) along with executive summary by logging into Eureka! portal using your credentials by 24th November, 2018 (11:59 pm). For your convenience, guidelines are provided which can be referred.<br>
+							
+								4) Participants are requested to submit traction report along with the draft B-Model and executive summary.<br>
+							
+								5) The B-Model submission is the second stage of this round. Only .pdf file formats will be accepted.<b>Please name your file : TeamName_Eureka_RegCode.pdf</b><br>
+
+								6)The evaluation for the 3rd and final round will be based on final B-Model along with MVP/POC.<br>
+							
+					</p>
+				</div>
+				<div style="display:none" id="prize_data">
+					<h2 style="text-align:center;color:#d07f40">Prize Distribution</h2>
+					<p style="color:white">
+						Teams do not have to make separate entries for competing for special awards.
+						One team cannot win more than one prize package out of the top 8 prize packages mentioned in the table above i.e. all prize packages that have cash awards.<br>
+						Before the Pitching Round, finalist teams will have to submit a priority list of the prize packages in case they are eligible for more than one prize package. To view the eligibility of prizes, check prize distribution.<br>
+						Prize allocation will be done considering both the priority lists and merit lists of each prize package.
+					</p>
+					<h2 style="text-align:center;color:#d07f40"></h2>
+					<p>
+						The total cash prize distribution for the prize winners will be done in different stages, depending on the award. Proper auditing at intermediate stages will be done to ensure that the prize money is appropriately used to take the venture forward.<br>
+						All prize money will be given as cheques. No cash under whatsoever condition will be given.<br>
+						The first cash prize will be issued 3 months after the declaration of results.
+					</p>
+				</div>
+				<div style="display:none" id="bwinner_data">
+					<h2 style="text-align:center;color:#d07f40">Prize Distribution</h2>
+					<p style="color:white">
+						1) 25% of the prize money will be awarded to the Eureka! Business Winner and Runner-Up after a period of 3 months.<br>
+						2) The cheque will be in the name of the team leader.<br>
+						All subsequent cheques will be made in the name of the incorporated company.
+						3) Within a period of 6 months after the date of declaration of results, the teams will be required to submit a detailed report of their progress to the Entrepreneurship Cell, IIT Bombay. The report would be evaluated by our panel of judges.<br>
+						4)If the judges declare that adequate progress has been made, a further 25% of the prize will be released after 6 months from the declaration of results.<br>
+						5) By this time, the team must also have incorporated the company.<br>
+						6) If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.<br>
+						The teams will be required to submit a second detailed report of their progress within 7) 6 months of receiving the second installment, which will again be verified by our panel of judges.<br>
+						8) The teams must also submit an account of their expenditure for the prize money they would have received till date, at least 2 weeks before the presentation. The Entrepreneurship Cell shall have this account audited.<br>
+						9) If the judges declare that adequate progress has been made in the venture, the remaining 50% of the cash awards will be given after 6 months of the second installment.
+						10) If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.<br>
+
+					</p>
+				</div>
+				<div style="display:none" id="swinner_data">
+					<h2 style="text-align:center;color:#d07f40">Social Track winner Prize Distribution</h2>
+					<p style="color:white">
+						1) 25% of the prize money will be awarded to the Eureka! Social Winner after a period of 3 months.<br>
+						2) The cheque will be in the name of the team leader.
+						All subsequent cheques will be made in the name of the incorporated company.<br>
+						Within a period of 6 months after the date of declaration of results, the teams will be required to submit a detailed report of their progress to the Entrepreneurship Cell, IIT Bombay. The report would be evaluated by our panel of judges.<br>
+						3) If the judges declare that adequate progress has been made, a further 25% of the prize will be released after 6 months from the declaration of results.<br>
+						By this time, the team must also have incorporated the company.
+						4) If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.<br>
+						5) The teams will be required to submit a second detailed report of their progress within 6 months of receiving the second installment, which will again be verified by our panel of judges.<br>
+						6) The teams must also submit an account of their expenditure for the prize money they would have received till date, at least 2 weeks before the presentation. The Entrepreneurship Cell shall have this account audited.<br>
+						7) If the judges declare that adequate progress has been made in the venture, the remaining 50% of the cash awards will be given after 6 months of the second installment.
+						If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.
+					</p>
+				</div>
+				<div style="display:none" id="srunner_data">
+					<h2 style="text-align:center;color:#d07f40">Social Track winner Prize Distribution</h2>
+					<p style="color:white">
+						1) 50% of the prize money will be awarded to the Eureka! Social Runner-Up after a period of 3 months from the declaration of results.<br>
+						2) Within a period of 6 months after the date of declaration of results, the teams will be required to submit a detailed report of their progress to the Entrepreneurship Cell, IIT Bombay. The report would be evaluated by our panel of judges.<br>
+						3) If the judges declare that adequate progress has been made, the remaining 50% of the prize will be released after 6 months from the declaration of results.
+						4) By this time, the team must also have incorporated the company.<br>
+						5) If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.<br>
+						6) The teams must also submit an account of their expenditure for the prize money they would have received till date, at least 2 weeks before the presentation. The Entrepreneurship Cell shall have this account audited.
+					</p>
+				</div>
+				<div style="display:none" id="iitwinner_data">
+					<h2 style="text-align:center;color:#d07f40">IITB Track winner Prize Distribution</h2>
+					<p style="color:white">
+						1) The entire prize money of Eureka! IIT Bombay Start-Up of the Year award shall be disbursed 3 months after the declaration of results.<br>
+						50% of the prize money will be awarded to the Eureka! IIT Bombay B-Model of the Year 2)Award after a period of 3 months.<br>
+						3) Within a period of 6 months after the date of declaration of results, the teams will be required to submit a detailed report of their progress to the Entrepreneurship Cell, IIT Bombay. The report would be evaluated by our panel of judges.<br>
+						4) If the judges declare that adequate progress has been made, the remaining 50% of the prize will be released after 6 months from the declaration of results.
+						5) By this time, the team must also have registered the company.<br>
+						6) If a team fails to give the report within the stipulated time, it shall be deemed that the team has forfeited the remaining prize.<br>
+						7) The teams must also submit an account of their expenditure for the prize money they would've received till date, at least 2 weeks before the presentation. The Entrepreneurship Cell shall have this account audited.
+
+					</p>
+				</div>
+				<div style="display:none" id="general_data">
+					<h2 style="text-align:center;color:#d07f40">IITB Track winner Prize Distribution</h2>
+					<p style="color:white">
+						By registering for this competition, it shall be deemed that each individual of the participating team has agreed to be bound by the following terms and conditions:</p>
+						<h2 style="color:#d07f40">Confidentiality</h2>
+						<p style="color:white">
+						By electing to participate in Eureka!, each participating team and all of its team members agree to allow The Entrepreneurship Cell, IIT Bombay to use their names, images and information regarding the team's business, and prize information in publicity and marketing efforts throughout the world, unless specifically prohibited by law. Each participating team must agree to accept that their registration form and other entries will not be returned to them, and accept that their personal data will be available for information and statistical purposes.</p>
+						<h2 style="color:#d07f40">Intellectual Property</h2>
+						<p style="color:white">
+						The participating team represents that intellectual property in the business model does not infringe upon the intellectual property or any other legal or moral right of any person or entity.</p>
+						<h2 style="color:#d07f40"> Legal Issues</h2>
+						<p style="color:white">
+						The participating team represents that they shall not violate any applicable law.
+						The Terms & Conditions and the Competition Rules shall be governed by the laws of India.
+						Any dispute or conflict arising out of, from or relating to anything contained in the Terms & Conditions and/ or the Competition Rules is subject to the jurisdiction of Mumbai courts only.</p>
+					</p>
+				</div>
+				<div style="display:none" id="others_data">
+					<h2 style="text-align:center;color:#d07f40">IITB Track winner Prize Distribution</h2>
+					<p style="color:white">
+						The Entrepreneurship Cell, IIT Bombay reserves the right to disqualify or prohibit from participating in Eureka! any team that makes a submission, that in the sole discretion of The Entrepreneurship Cell, IIT Bombay, does not confirm with the Eligibility Criteria or does not comply with the Terms & Conditions and/ or the Competition Rules and/ or violates the spirit of Eureka! as a competition. In addition, the Entrepreneurship Cell, IIT Bombay may notify the appropriate legal/ administrative authorities as it deems fit and/or initiate any other action as may be advised.
+						By entering the Competition, each team and its individual members agree to accept the decisions of The Entrepreneurship Cell, IIT Bombay as final including determination of the winners of Eureka!.<br>
+						The Entrepreneurship Cell, IIT Bombay shall have the discretion to initiate appropriate action against participating teams including individuals of such participating teams in case of any losses or damages arising from violation of the Eligibility Criteria, Competition Rules and the Terms & Conditions.<br>
+						If Entrepreneurship Cell, IIT Bombay or its sponsors or associates are faced with any claim or loss (including any third party claims) arising from or relating to any breach by any member of a participating team of the Terms and Conditions hereof, such participating team shall severally and jointly indemnify and keep harmless Entrepreneurship Cell, IIT Bombay or its sponsors or associates.
+					</p>
+				</div>
+
+			</div>
+			<!--BIG TABLE END HERE  -->
+
 		</div>
 	</div>
 
-	<div class="row about">
-		<div class="col-md-3" style="background-color:#e7a54f">
-			<h3 class="about_names" style="padding:0px"><b>Our Vision</b></h3>
+    <!-- LAST YEAR STATS START-->
+	<div class="stats  col-xs-12 container" style="margin-top:25px;padding:0px">
+
+		<div class="col-xs-3" style="padding:0px">
+			<p class="stats_parts"><b>10320</b></p>
+			<p class="stats_names"><b>Entries(Last year)</b></p>
 		</div>
-		<div class="col-md-9" style="background-color:#d1d3ce">
-			<p class="about_des" style="padding:6px">Innovation and entrepreneurship are the wheels that steer the world into a brighter future. The world economy will tumble upon itself if new innovations are not reaped every day. Great ideas result into great undertakings which pave the way for glaring success. It is easier said than done because the process of realizing an idea needs a deep understanding of the world around, and an innate preparedness to cope with failures - an inevitable part of enterprising. In order to facilitate this vision of promoting entrepreneurship in India and the world, E-Cell organizes Eureka!, an international business model competition. Eureka! provides a platform for potential ideas and early stage startups to evaluate their plan in the risk free environment of a competition. It aims to bridge the gap between ideas and the realization of an enterprise.</p>
+		<div class="col-xs-3 " style="padding:0px">
+			<p class="stats_parts"><b>150</b></p>
+			<p class="stats_names"><b>Mentors</b></p>
+		</div>
+		<div class="col-xs-3 " style="padding:0px">
+			<p class="stats_parts"><b>50</b></p>
+			<p class="stats_names"><b>Lacs of Prize Money</b></p>
+		</div>
+		<div class="col-xs-3 " style="padding:0px">
+			<p class="stats_parts"><b>19</b></p>
+			<p class="stats_names"><b>Years</b></p>
 		</div>
 	</div>
-    </div>
+
+	
+	<!-- LAST YEAR STATS END -->
+
+	<!-- HEADING -->
+	<div class="heading">
+		<h2 class="heading_inside">Incentives</h2>
+		<img src="small2.jpg">
 	</div>
+	<!-- INCENTIVES START -->
+	<div class="container" style="margin-top:20px">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			
+				<div class="col-xs-6  col-md-3 col-md-offset-3">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+				<div class="col-xs-6  col-md-3">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+				<div class="col-xs-6 col-md-3">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+				<div class="col-xs-6 col-md-3 col-md-offset-3">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+			
+			
+				<div class="col-md-3 col-xs-6">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+				<div class="col-md-3 col-xs-6">
+					<img src="incentive_image.jpg" class="incent_part">
+				</div>
+				
+			
+		</div>
+	</div>
+	<!-- INCENTIVES END -->
 
 	<div class="heading">
 		<h2 class="heading_inside">Contact Us</h2>
 		<img src="small2.jpg">
 	</div>
-	<div class="container"
-	<div class="contact col-md-10 col-md-offset-1">
-		<div class="row">
-			<div class="col-md-7">
-				<h1 style="color:#d1d3ce">For any queries, contact:</h1>
-				<div class="col-md-4" >
-					<img class="manager_pic" src="kushal.jpg" width="170px">
-					<div class="personal_details">
-						<p style="color:">Kushal Agarwal</p>
-						<p style="color:">Events Head</p>
-						<img src="">
-						<p style="color:">+91-9163779100</p>
-						<p style="color:">kushal@ecell.in</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<img class="manager_pic" src="praveen.jpg" width="170px">
-					<div class="personal_details">
-						<p style="color:">Praveen Saran</p>
-						<p style="color:">Events Head</p>
-						<img src="">
-						<p style="color:">+91-8209722134</p>
-						<p style="color:">praveen_s@ecell.in</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<img class="manager_pic" src="sumitra.jpg" width="170px">
-					<div class="personal_details">
-						<p style="color:">Sumitra Charan</p>
-						<p style="color:">Events Head</p>
-						<img src="">
-						<p style="color:">+91-8291339497</p>
-						<p style="color:">sumitra@ecell.in</p>
-					</div>
-				</div>
-			</div>
 
-			<div class="col-md-5">
-				<h1 style="color:#d1d3ce">Leave a Message</h1>
-				<!-- <form> -->
-					<input placeholder="Name" class="input row" name="name" rows="40" height="100"><br>
-					<input placeholder="Email" class="input row" size="30"><br>
-					<input placeholder="Mobile" class="input row" size="30"><br>
-					<input placeholder="Message" class="input row" size="30">
-				<!-- </form> -->
-			</div>
+	<!-- CONTACT US START -->
+	<div class="container">
+		<div class="contact col-md-12" style="margin-right:0px" style="padding:0px">
+			
+				<div class="col-sm-12 col-md-6 col-xs-12 container" >
+					<h1 style="color:#d1d3ce">For any queries, contact:</h1>
+					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+						<img class="manager_pic" src="kushal.jpg" >
+						<div class="personal_details">
+							<p style="color:">Kushal Agarwal</p>
+							<p style="color:">Events Head</p>
+							<!-- <img src=""> -->
+							<p style="color:">+91-9163779100</p>
+							<p style="color:white"><a href="kushal@ecell.in">kushal@ecell.in</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+						<img class="manager_pic" src="praveen.jpg" width="100%">
+						<div class="personal_details">
+							<p style="color:">Praveen Saran</p>
+							<p style="color:">Events Head</p>
+							<!-- <img src=""> -->
+							<p style="color:">+91-8209722134</p>
+							<p style="color:white"><a href="mailto:praveen_s@ecell.in">praveen_s@ecell.in</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+						<img class="manager_pic" src="sumitra.jpg" width="100%">
+						<div class="personal_details">
+							<p style="color:">Sumitra Charan</p>
+							<p style="color:">Public Relations Head</p>
+							<!-- <img src=""> -->
+							<p style="color:">+91-8291339497</p>
+							<p style="color:white"><a href="mailto:sumitra@ecell.in">sumitra@ecell.in</a></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding:0px">
+					
+						<div class="col-xs-12"><h1 style="color:#d1d3ce">Leave a Message</h1></div>
+					<!-- <form> -->
+						<div class="col-xs-12 ">
+							<input placeholder="Name" class="input">
+						</div>
+						<div class="col-xs-12 ">
+							<input placeholder="Email" class="input">
+						</div>
+						<div class="col-xs-12 ">
+							<input placeholder="Mobile" class="input">
+						</div>
+						<div class="col-xs-12 ">
+							<input placeholder="Message" class="input message">
+						</div>
+						<div class="col-xs-12">
+						<button  type="submit" class="sub">SUBMIT</button>
+						</div>
+					<!-- </form> -->
+					
+				</div>
+		]
 		</div>
 	</div>
-</div>
+	<!-- CONTACT US END -->
 
+	<!-- FOTTER START -->
 	<div class="footer">
-		<div class="col-md-10 col-md-offset-1" style="background-color:#1b222c">
-			<img src="ecell_logo.png" width="70px" style="margin-left:47%">
-			<p style="color:#d1d3ce;text-align:center"><b>The Entrepreneurship Cell,IIT Bombay</b></p>
+		<div class="col-md-10 col-md-offset-1" style="background-color:#1b222c;margin-top:3%">
+			<img src="ecell_logo.png" width="70px" class="center">
+			<p style="color:#d1d3ce;text-align:center">The Entrepreneurship Cell,IIT Bombay</p>
 			<p style="color:#d1d3ce;text-align:center">E-Cell Office, Student Activity Centre, IIT Bombay, Mumbai-400076</p><br>
 			<!-- <div class="col-xs-8 col-xs-offset-2" > -->
-				<div class="col-xs-3"><span class="fa fa-facebook" style="color:blue">
-				<span class="fa fa-linkedin">
-				<span class="fa fa-twitter">
-				<span class="fa fa-instagram"></div> 
+				<div class="col-xs-8 col-xs-offset-2" style="text-align:center">
+				<a href="https://www.facebook.com/ecell.in/" target="_blank"><span class="fa fa-facebook fa-2x" style="color:white"></span></a>
+				<a href="https://www.linkedin.com/company/ecell_iitb/" target="_blank"><span class="fa fa-linkedin fa-2x" style="margin-left:5%;color:white"></span></a>
+				<a href="https://twitter.com/ecell_iitb" target="_blank"><span class="fa fa-twitter fa-2x" style="margin-left:5%;color:white"></span ></a>
+				<a href="https://www.instagram.com/ecell_iitb/" target="_blank"><span class="fa fa-instagram fa-2x" style="margin-left:5%;color:white"></span></a>
+				<a href="https://www.instagram.com/ecell_iitb/" target="_blank"><span class="fa fa-youtube fa-2x" style="margin-left:5%;color:white"></span></a>
+			</div>
+				
 			</div>
 		</div>
 	</div>
+	<!-- FOOTER END -->
+
 	<script>
 		// $(".part").mouseover(function(){
 		// 	$(".dot").show();
@@ -970,21 +1474,305 @@ strong{
 		// $(".part").mouseover(function(){
 		// 	$(".dot").hide();
 		// });
-		$(".structure").click(function(){
-			$(".options").show();
-			$(".line1").show();
-			$(".line2").show();
-		});
-
-		// $(".option1").onclick(function(){
-		// 	$(".options").show();
-		// });
-
 		
-		// $(".structure").mousedown(function(){
-		// 	$(".options").hide();
-		// });
+		$(".structure").click(function(){
+			$("#timeline_head").show();
+			$("#tracks_head").show();
+			$("#business_head").hide();
+			$("#social_head").hide();
+			$("#IITB_head").hide();
+			$("#choose_head").hide();
+			$("#round1_head").hide();
+			$("#round2_head").hide();
+			$("#prize_head").hide();
+			$("#bwinner_head").hide();
+			$("#swinner_head").hide();
+			$("#iitwinner_head").hide();
+			$("#general_head").hide();
+			$("#others_head").hide();
+		});
+		$("#eligibility").click(function(){
+			$("#timeline_head").hide();
+			$("#tracks_head").hide();
+			$("#business_head").show();
+			$("#social_head").show();
+			$("#IITB_head").show();
+			$("#choose_head").hide();
+			$("#round1_head").hide();
+			$("#round2_head").hide();
+			$("#prize_head").hide();
+			$("#bwinner_head").hide();
+			$("#swinner_head").hide();
+			$("#iitwinner_head").hide();
+			$("#general_head").hide();
+			$("#others_head").hide();
+		});
+		$("#rules").click(function(){
+			$("#choose_head").show();
+			$("#round1_head").show();
+			$("#round2_head").show();
+			$("#timeline_head").hide();
+			$("#tracks_head").hide();
+			$("#business_head").hide();
+			$("#social_head").hide();
+			$("#IITB_head").hide();	
+			$("#prize_head").hide();
+			$("#bwinner_head").hide();
+			$("#swinner_head").hide();
+			$("#iitwinner_head").hide();
+			$("#general_head").hide();
+			$("#others_head").hide();
+		});
+		$("#term").click(function(){
+			$("#prize_head").show();
+			$("#bwinner_head").show();
+			$("#swinner_head").show();
+			$("#iitwinner_head").show();
+			$("#general_head").show();
+			$("#others_head").show();
+			$("#timeline_head").hide();
+			$("#tracks_head").hide();
+			$("#business_head").hide();
+			$("#social_head").hide();
+			$("#IITB_head").hide();	
+			$("#choose_head").hide();
+			$("#round1_head").hide();
+			$("#round2_head").hide();
+		});
+		$("#timeline_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").show();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#tracks_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").show();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#social_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").show();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#business_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").show();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#IITB_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").show();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#choose_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").show();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#round1_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").show();
+			$("#round2_data").hide();
+		});
+		$("#round2_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").show();
+		});
+		$("#prize_head").click(function(){
+			$("#prize_data").show();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#bwinner_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").show();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#swinner_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").show();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#iitwinner_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").show();
+			$("#general_data").hide();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#general_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").show();
+			$("#others_data").hide();
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		$("#others_head").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").show(); 
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").hide();
+			$("#round1_data").hide();
+			$("#round2_data").hide();
+		});
+		// $("#rules").click(function(){
 
+		// });
+		// $("#faq").click(function(){
+
+		// });
+		// $("#terms").click(function(){
+		// });
+		
+		
 	</script>
 	<script>
 var slideIndex = 1;

@@ -17,12 +17,12 @@ body {
 }
 </style>
 </head>
-<svg id="mySVG" style="overflow:scroll">
-  <path fill="none" stroke="red" stroke-width="3" id="triangle" d="M360 0 L75 200 L250 200 Z"/>
+<svg id="mySVG">
+  <path fill="none" stroke="red" stroke-width="3" id="triangle" d="M150 0 L75 200 L225 200 Z" />
+  Sorry, your browser does not support inline SVG.
 </svg>
 
 <script>
-// Get the id of the <path> element and the length of <path>
 var triangle = document.getElementById("triangle");
 var length = triangle.getTotalLength();
 
@@ -36,10 +36,10 @@ triangle.style.strokeDashoffset = length;
 window.addEventListener("scroll", myFunction);
 
 function myFunction() {
-  var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+var scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
-  var draw = length * scrollpercent;
-
+  var draw = (length * scrollpercent)/100;
+  
   // Reverse the drawing (when scrolling upwards)
   triangle.style.strokeDashoffset = length - draw;
 }
