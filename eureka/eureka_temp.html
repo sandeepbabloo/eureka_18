@@ -19,7 +19,6 @@
 	p a{
 
 	}
-	
 	.button28 {
 	color: rgba(255,255,255,1);
 	-webkit-transition: all 0.3s;
@@ -187,25 +186,25 @@
   to {opacity: 1}
 }
 
-		li{
+		.navi{
 			float:right;
 			padding:13px;
 			/*padding-bottom: 0px;*/
 			color:#d1d3ce;
 			/*background-color:#222e3c;*/
 			font-size: 1.18vw;
-			font-weight:100;
+			/*font-weight:100;*/
 			cursor:pointer;
 			vertical-align: middle;
 			/*font-weight:500;*/
 		}
-		li:hover{
+		.navi:hover{
 			color:#d07f40;
 		}
-		li a{
+		.navi a{
 			color:#d1d3ce;
 		}
-		li a:hover{
+		.navi a:hover{
 			color:#d07f40;
 			text-decoration:none;
 		}
@@ -292,6 +291,11 @@
 			padding-left:15px;
 			vertical-align:middle;
 		}
+		@media only screen and(max-width:1500px){
+			.matter{
+				font-size:30px;
+			}
+		}
 		.matter{
 			border: 2px solid #d1d3ce;
 			/*height:80vh;*/
@@ -377,17 +381,7 @@
 			margin-bottom:15px;
 			padding:5px;
 			color:#d1d3ce;
-		}
-		input{
 			width:100%;
-		}
-		.message{
-				height:20vh;
-			}
-		@media only screen and(max-width:800px){
-			.message{
-				height:5vh !important;
-			}
 		}
 		.main{
 			/*background-image:url('eureka_c2.png');*/
@@ -783,6 +777,7 @@ strong{
 	height:5vh;
 	width:100%;
 }
+
 </style>
 
 </head>
@@ -792,14 +787,14 @@ strong{
 			<div class="head row col-md-12 col-lg-12 hidden-xs hidden-sm" style="background-image: url('header.png')">
 				<img src="eureka_logo.png" width="10%" style="float:left">
 				<ul type="none" class="menu" style="float:right;margin-bottom:-2%">
-					<li >Contact Us</li>
-					<li >About Us</li>
-					<li >Sponsors</li>
-					<li ><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
-					<li ><a href="https://ecell.in/illuminate">Illuminate</a></li>
-					<li >Incentives</li>
-					<li >Competition</li>
-					<li >Home</li>
+					<li class="navi">Contact Us</li>
+					<li class="navi">Sponsors</li>
+					<li class="navi"><a href="https://ecell.in/eureka_junior">Eureka! Junior</a></li>
+					<li class="navi"><a href="https://ecell.in/illuminate">Illuminate</a></li>
+					<li class="navi">Incentives</li>
+					<li class="navi">Competition</li>
+					<li class="navi">About Us</li>
+					<li class="navi">Home</li>
 					
 				</ul>
 		    </div>
@@ -814,7 +809,7 @@ strong{
 			<!-- TESTIMONIALS SLIDESHOW START -->
 			</div>
 			<div class="col-md-7">
-					<img src="cover2.jpg" style="width:100%">
+					<img src="cover2.jpg" style="width:100%">	
 			</div>
 			<div class="col-md-6 button-section">
 				<div class="col-md-6"><button class="but2">Register</button></div>
@@ -1069,36 +1064,33 @@ strong{
 			</div>
 			</div>
 
-			<div class="content hidden-lg hidden-md  container">
-				<div class="tabs">
+			<div class="content hidden-lg hidden-md">
+				<div class="tabs" style="color:white;text-align:center;font-size:23px">
 					<ul type="none">
-					 <li class="structure">Structure</li>
-						<li id="timeline_head" class="options">Timeline</li>
-						<li id="tracks_head" class="options">Tracks&Awards</li>
-						<li id="eligibility">Eligibility</li>
-						<li id="business_head" style="display:none" class="options">Business Track</li>
-						<li id="social_head" style="display:none" class="options">Social Track</li>
-						<li id="IITB_head" style="display:none" class="options">IITB Track</li>
-						<li id="rules">Rules</li>
-						<li id="choose_head" style="display:none" class="options">Choose Track</li>
-						<li id="round1_head" style="display:none" class="options">Round 1</li>
-						<li id="round2_head" style="display:none" class="options">Round2</li>
-						<li>FAQ's</li>
-						<li id="term">Terms & Conditions</li>
-						<li id="prize_head" style="display:none" class="options">Prize</li>
-						<li id="bwinner_head" style="display:none" class="options">Business Prize</li>
-						<li id="swinner_head" style="display:none" class="options">Social Prize</li>
-						<li id="iitwinner_head" style="display:none" class="options">IITB Prize</li>
-						<li id="general_head" style="display:none" class="options">General</li>
-						<li id="others_head" style="display:none" class="options">Others</li>
-						<li>Past 18 years</li>
-						<li>Success Stories</li>
+						<li class="col-xs-2">
+							<p id="mstructure" >Structure</p>
+						</li>
+						<li class="col-xs-2">
+					 		<p id="meligibility" >Eligibility</p>
+					 	</li>
+					 	<li class="col-xs-1">
+					 		<p id="mrules">Rules</p>
+					 	</li>
+					 	<li class="col-xs-1">
+							<p id="mfaq" >FAQ's</p>
+						</li>
+						<li class="col-xs-3">
+							<p id="mterm" >Terms & Conditions</p>
+						</li>
+						<li class="col-xs-3">
+							<p id="msucces_head">Success Stories</p>
+						</li>	
 					</ul>	
 				</div>
 			</div>
 
 			<!-- BIG TABLE DATA START -->
-			<div class="matter col-md-8 col-sm-12 col-xs-12 container">
+			<div class="matter col-md-8 col-lg-8 col-xs-12 col-sm-12">
 				<div id="timeline_data">
 					<h3 style="text-align:center;color:#d1d3ce"> Eureka Portal is going to be launched on <strong>25th August</strong></h3>
 					<div class="col-xs-3">
@@ -1383,12 +1375,11 @@ strong{
 	</div>
 
 	<!-- CONTACT US START -->
-	<div class="container">
 		<div class="contact col-md-12" style="margin-right:0px" style="padding:0px">
 			
-				<div class="col-sm-12 col-md-6 col-xs-12 container" >
+				<div class="col-sm-12 col-md-6 col-xs-12" >
 					<h1 style="color:#d1d3ce">For any queries, contact:</h1>
-					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+					<div class="col-xs-4">
 						<img class="manager_pic" src="kushal.jpg" >
 						<div class="personal_details">
 							<p style="color:">Kushal Agarwal</p>
@@ -1398,7 +1389,7 @@ strong{
 							<p style="color:white"><a href="kushal@ecell.in">kushal@ecell.in</a></p>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+					<div class="col-xs-4">
 						<img class="manager_pic" src="praveen.jpg" width="100%">
 						<div class="personal_details">
 							<p style="color:">Praveen Saran</p>
@@ -1408,7 +1399,7 @@ strong{
 							<p style="color:white"><a href="mailto:praveen_s@ecell.in">praveen_s@ecell.in</a></p>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-8 col-xs-8 col-xs-offset-2">
+					<div class="col-xs-4">
 						<img class="manager_pic" src="sumitra.jpg" width="100%">
 						<div class="personal_details">
 							<p style="color:">Sumitra Charan</p>
@@ -1419,37 +1410,37 @@ strong{
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12" style="padding:0px">
+			<div class="container">
+				<div class="col-md-5 col-sm-12 col-lg-6 col-xs-12" style="padding:0px">
 					
 						<div class="col-xs-12"><h1 style="color:#d1d3ce">Leave a Message</h1></div>
-					<!-- <form> -->
-						<div class="col-xs-12 ">
+							<!-- <form> -->
+						<div class="col-xs-12">
 							<input placeholder="Name" class="input">
 						</div>
-						<div class="col-xs-12 ">
+						<div class="col-xs-12">
 							<input placeholder="Email" class="input">
 						</div>
 						<div class="col-xs-12 ">
 							<input placeholder="Mobile" class="input">
 						</div>
 						<div class="col-xs-12 ">
-							<input placeholder="Message" class="input message">
+							<textarea placeholder="Message" class="input message" rows="4"></textarea>
 						</div>
 						<div class="col-xs-12">
-						<button  type="submit" class="sub">SUBMIT</button>
+							<button  type="submit" class="sub">SUBMIT</button>
 						</div>
 					<!-- </form> -->
-					
+					</div>
 				</div>
-		]
 		</div>
-	</div>
 	<!-- CONTACT US END -->
 
 	<!-- FOTTER START -->
+	
+	<!-- FOOTER END -->
 	<div class="footer">
-		<div class="col-md-10 col-md-offset-1" style="background-color:#1b222c;margin-top:3%">
+		<div class="col-md-12 col-xs-12" style="background-color:#1b222c;margin-top:3%">
 			<img src="ecell_logo.png" width="70px" class="center">
 			<p style="color:#d1d3ce;text-align:center">The Entrepreneurship Cell,IIT Bombay</p>
 			<p style="color:#d1d3ce;text-align:center">E-Cell Office, Student Activity Centre, IIT Bombay, Mumbai-400076</p><br>
@@ -1460,13 +1451,10 @@ strong{
 				<a href="https://twitter.com/ecell_iitb" target="_blank"><span class="fa fa-twitter fa-2x" style="margin-left:5%;color:white"></span ></a>
 				<a href="https://www.instagram.com/ecell_iitb/" target="_blank"><span class="fa fa-instagram fa-2x" style="margin-left:5%;color:white"></span></a>
 				<a href="https://www.instagram.com/ecell_iitb/" target="_blank"><span class="fa fa-youtube fa-2x" style="margin-left:5%;color:white"></span></a>
-			</div>
+				</div>
 				
-			</div>
 		</div>
 	</div>
-	<!-- FOOTER END -->
-
 	<script>
 		// $(".part").mouseover(function(){
 		// 	$(".dot").show();
@@ -1762,6 +1750,22 @@ strong{
 			$("#choose_data").hide();
 			$("#round1_data").hide();
 			$("#round2_data").hide();
+		});
+		$("#mrules").click(function(){
+			$("#prize_data").hide();
+			$("#bwinner_data").hide();
+			$("#swinner_data").hide();
+			$("#iitwinner_data").hide();
+			$("#general_data").hide();
+			$("#others_data").hide(); 
+			$("#timeline_data").hide();
+			$("#tracks_data").hide();
+			$("#business_data").hide();
+			$("#social_data").hide();
+			$("#IITB_data").hide();	
+			$("#choose_data").fadeIn();
+			$("#round1_data").fadeIn();
+			$("#round2_data").fadeIn();
 		});
 		// $("#rules").click(function(){
 
